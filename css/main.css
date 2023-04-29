@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Sigmar', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(179, 248, 248);
+}
+header {
+    font-size: 10vmin;
+    color: rgb(50, 160, 160);
+    letter-spacing: .5vmin;
+}
+h1{
+    color: rgb(150, 234, 234);
+    font-size: 8vmin;
+    letter-spacing: 1vmin;
+}
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 20vmin);
+    grid-template-rows: repeat(3, 20vmin);
+    cursor: pointer;
+    margin: -1vmin;
+}
+
+.right-border {
+    border-right: 3vmin solid rgb(150, 234, 234);
+}
+.bottom-border {
+    border-bottom: 2vmin solid rgb(150, 234, 234);
+}
+
+button {
+    margin-top: 8vmin;
+    padding: 2vmin;
+    font-size: 3vmin;
+    border-radius: 3vmin;
+    border: 0.1vmin solid rgb(50, 160, 160);
+    background-color: rgb(50, 160, 160);
+    color: rgb(179, 248, 248);
+}
