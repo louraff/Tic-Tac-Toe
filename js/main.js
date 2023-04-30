@@ -4,6 +4,11 @@ const COLORS = {
     '1': 'coral',
     '-1': 'teal',
 }
+const PLAYER = {
+    '0': 'rgb(179, 248, 248)',
+    '1': 'O',
+    '-1': 'X',
+}
 
 	/*----- state variables -----*/
 let board;
@@ -16,7 +21,7 @@ const playAgainBtn = document.querySelector('button');
 const boardEl = [...document.querySelectorAll('#board > div')];
 
 	/*----- event listeners -----*/
-playAgainBtn.addEventListener('click', resetGame);
+playAgainBtn.addEventListener('click', init);
 document.getElementById('board').addEventListener('click', cellClick);
 
 	/*----- functions -----*/
@@ -43,11 +48,20 @@ function render() {
 function cellClick(evt) {
     const clickedEl = evt.target;
     const clickedElId = clickedEl.getAttribute('id');
-    const strArr = clickedElId.split('r');
-    const rEl = strArr[1];
+    const strRowArr = clickedElId.split('r');
+    const rEl = strRowArr[1];
     const rowIdx = parseInt(rEl);
+
+    const strColArr = clickedElId.split('c');
+    const cEl = strColArr[1];
+    const colIdx = parseInt(cEl);
+
+    if (board[colIdx][rowIdx] !== 0) return;
+    const colArr = board[colIdx];
+    
+    colArr[rowIdx] = turn;
     turn *= -1;
-    winner = getWinner(colIdx, rowIdx);
+    winner = getWinner(board, turn);
     render();
 };
 
@@ -67,7 +81,13 @@ console.log(cellEl);
 };
 
 function renderMessage () {
-
+    if (winner === 'T') {
+        messageEl.innerText = "It's a tie!"
+    } else if (winner) {
+        messageEl.innerHTML = `<span style="color: ${COLORS[winner]}">${PLAYER[winner].toUpperCase()}</span> wins!`
+    } else {
+        messageEl.innerHTML = `<span style="color: ${COLORS[turn]}">${PLAYER[turn].toUpperCase()}</span>'s turn`
+    };
 };
 
 function renderControls() {
