@@ -13,11 +13,11 @@ let winner;
 	/*----- cached elements  -----*/
 const messageEl = document.querySelector('h1');
 const playAgainBtn = document.querySelector('button');
-const boardEl = document.querySelectorAll('#board>div');
+const boardEl = [...document.querySelectorAll('#board > div')];
 
 	/*----- event listeners -----*/
 playAgainBtn.addEventListener('click', resetGame);
-boardEl.addEventListener('click', cellClick);
+document.getElementById('board').addEventListener('click', cellClick);
 
 	/*----- functions -----*/
 
@@ -38,6 +38,21 @@ function render() {
     renderBoard();
     renderMessage();
     renderControls();
+};
+
+function cellClick(evt) {
+    const clickedEl = evt.target;
+    const clickedElId = clickedEl.getAttribute('id');
+    const strArr = clickedElId.split('r');
+    const rEl = strArr[1];
+    const rowIdx = parseInt(rEl);
+    turn *= -1;
+    winner = getWinner(colIdx, rowIdx);
+    render();
+};
+
+function resetGame(evt) {
+
 };
 
 function renderBoard () {
