@@ -16,7 +16,8 @@ const playAgainBtn = document.querySelector('button');
 const boardEl = document.querySelectorAll('#board>div');
 
 	/*----- event listeners -----*/
-
+playAgainBtn.addEventListener('click', resetGame);
+boardEl.addEventListener('click', cellClick);
 
 	/*----- functions -----*/
 
