@@ -11,7 +11,9 @@ let turn;
 let winner;
 
 	/*----- cached elements  -----*/
-
+const messageEl = document.querySelector('h1');
+const playAgainBtn = document.querySelector('button');
+const boardEl = document.querySelectorAll('#board>div');
 
 	/*----- event listeners -----*/
 
