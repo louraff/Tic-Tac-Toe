@@ -65,10 +65,6 @@ function cellClick(evt) {
     render();
 };
 
-function resetGame(evt) {
-
-};
-
 function getWinner(colIdx, rowIdx) {
     let verticalWin = checkVerticalWin(colIdx, rowIdx);
     let horizontalWin = checkHorizontalWin(colIdx, rowIdx);
@@ -76,32 +72,27 @@ function getWinner(colIdx, rowIdx) {
     let diagonalWinNWSE = checkDiagonalWinNWSE(colIdx, rowIdx);
     
     if (verticalWin || horizontalWin || diagonalWinNESW || diagonalWinNWSE) {
-        return winner;
-    } else {
-        checkTie(colIdx, rowIdx);
-        if (true) {
-            winner = 'T'
+        winner = board[colIdx][rowIdx];
+    } else if (checkTie()){
+         winner = 'T'
         } else {
-            winner = null;
-        }
-    };
-};
-
-function checkTie(colIdx, rowIdx) {
-    if (!winner) {
-        for(colArr of board) {
-            for(rowArr of colArr) {
-                if (board[colIdx][rowIdx] === 0) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-        } 
-    } else {
         winner = null;
+        }
+        return winner;
     };
-};
+
+function checkTie() {
+    for(const colArr of board) {
+        for(const cellVal of colArr) {
+            if (cellVal === 0) {
+                return false;
+            }
+        }
+    } 
+    return true;
+} 
+    
+
 
 function checkDiagonalWinNWSE(colIdx, rowIdx) { // colIdx, rowIdx are where the last move was made
 	const adjCountNW = countAdjacent(colIdx, rowIdx, -1, 1);
@@ -123,7 +114,9 @@ function checkHorizontalWin(colIdx, rowIdx) {
 };
 
 function checkVerticalWin(colIdx, rowIdx) { 
-	return countAdjacent(colIdx, rowIdx, 0, -1) === 2 ? board[colIdx][rowIdx] : null;
+    const adjCountUp = countAdjacent(colIdx, rowIdx, 0, -1);
+	const adjCountDown = countAdjacent(colIdx, rowIdx, 0, 1);
+	return (adjCountUp+ adjCountDown) === 2 ? board[colIdx][rowIdx] : null;
 };
 
 function countAdjacent(colIdx, rowIdx, colOffset, rowOffset) {
