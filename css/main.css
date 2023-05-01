@@ -12,21 +12,28 @@ body {
     background-color: rgb(179, 248, 248);
 }
 header {
-    font-size: 10vmin;
+    margin-top: 15vmin;
+    font-size: 8vmin;
     color: rgb(50, 160, 160);
     letter-spacing: .5vmin;
 }
 h1{
     color: rgb(150, 234, 234);
-    font-size: 8vmin;
+    font-size: 6vmin;
     letter-spacing: 1vmin;
+    margin-top: -1vmin;
 }
 #board {
     display: grid;
-    grid-template-columns: repeat(3, 20vmin);
-    grid-template-rows: repeat(3, 20vmin);
+    grid-template-columns: repeat(3, 16vmin);
+    grid-template-rows: repeat(3, 16vmin);
     cursor: pointer;
     margin: -1vmin;
+}
+#board > div {
+    font-size: 10vmin;
+    padding-left: 4vmin;
+    padding-bottom: 6vmin;
 }
 
 .right-border {
