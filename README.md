@@ -4,12 +4,12 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
 - [Project Process](#project-process)
   - [Planning](#planning)
   - [Development](#development)
 - [Conclusion](#conclusion)
-- [Installation](#installation)
-- [Usage](#usage)
 
 ## Introduction
 
