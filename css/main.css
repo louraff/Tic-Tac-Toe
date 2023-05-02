@@ -12,7 +12,7 @@ body {
     background-color: rgb(179, 248, 248);
 }
 header {
-    margin-top: 15vmin;
+    margin-top: 5vmin;
     font-size: 8vmin;
     color: rgb(50, 160, 160);
     letter-spacing: .5vmin;
@@ -21,7 +21,7 @@ h1{
     color: rgb(150, 234, 234);
     font-size: 6vmin;
     letter-spacing: 1vmin;
-    margin-top: -1vmin;
+    margin-top: 0vmin;
 }
 #board {
     display: grid;
@@ -31,9 +31,12 @@ h1{
     margin: -1vmin;
 }
 #board > div {
+  
     font-size: 10vmin;
-    padding-left: 4vmin;
-    padding-bottom: 6vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .right-border {
@@ -51,4 +54,8 @@ button {
     border: 0.1vmin solid rgb(50, 160, 160);
     background-color: rgb(50, 160, 160);
     color: rgb(179, 248, 248);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

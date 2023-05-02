@@ -5,7 +5,7 @@ const COLORS = {
     '-1': 'teal',
 }
 const PLAYER = {
-    '0': 'rgb(179, 248, 248)',
+    '0': '',
     '1': 'O',
     '-1': 'X',
 }
