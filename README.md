@@ -45,7 +45,7 @@ I began by brainstorming the game mechanics, user interface, and overall structu
 
 During the development phase, I used HTML, CSS, and JavaScript to bring the game to life. I started by building the game board with an HTML grid and styled it with CSS. Next, I created the JavaScript logic to handle player interactions, turns, and win conditions.
 
-Throughout the development process, I faced a few challenges and needed to apply my problem-solving skills to overcome them. I learned from my mistakes and improved my code by iterating and refining my solutions.
+Throughout the development process, I faced a few challenges. I learned from my mistakes and improved my code by iterating and refining my solutions.
 
 ## Problem Solving
 
